@@ -31,13 +31,13 @@ ALLOWED_HOSTS = ['my-django-rodrigo.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'flights.apps.FlightsConfig',    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'flights.apps.FlightsConfig',    
 ]
 
 MIDDLEWARE = [
