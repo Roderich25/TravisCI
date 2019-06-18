@@ -1,81 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-<html lang="en-us" >
-<head>
-<title>Welcome</title>
+    <title>Welcome</title>
 
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
-    
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<meta name="robots" content="NONE,NOARCHIVE">
-</head>
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css" rel="stylesheet">
+  </head>
 
-
-<body class=" login"
-  data-admin-utc-offset="0">
-
-<!-- Container -->
-<div id="container">
-
-    
-    <!-- Header -->
-    <div id="header">
-        <div id="branding">
-        
-<h1 id="site-name">Flights App</h1>
-
-        </div>
-        
-        
-    </div>
-    <!-- END Header -->
-    
-    
-
-    
-        
-    
-
-    <!-- Content -->
-    <div id="content" class="colM">
-        
-        
-        
-
-
-
-
-<div id="content-main">
-
-
-
-<form action="{% url 'login' %}" method="post" id="login-form">
-
-<div class="form-row">    
-    <label class="required" for="id_username">Username:</label> <input type="text" name="username" autofocus required id="id_username">
-  </div>
-  <div class="form-row">
-    
-    <label class="required" for="id_password">Password:</label> <input type="password" name="password" required id="id_password">
-  </div>
-  
-  
-  <div class="submit-row">
-    <label>&nbsp;</label>{% csrf_token %} <input type="submit" value="Log in">
-  </div>
-</form>
-
-</div>
-
-        
-        <br class="clear">
-    </div>
-    <!-- END Content -->
-
-    <div id="footer"></div>
-</div>
-<!-- END Container -->
-
-</body>
+  <body class="text-center">
+    <form class="form-signin" method="post" action="{% url 'login' %}">
+      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
+      <label for="inputEmail" class="sr-only">User Name</label>
+	  {% csrf_token %}
+      <input type="text" name="username" id="inputEmail" class="form-control" placeholder="User Name" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+  </body>
 </html>
